@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_page"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="320dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── Banner / Logo ──────────────────────────────────────── -->
+            <ImageView
+                android:id="@+id/imageLogo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/screenshot_4"
+                android:contentDescription="@string/banner_description" />
+
+            <!-- ── Formulário ─────────────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/EstiloTexto"
+                    android:text="Faça seu pedido!" />
+
+                <!-- Rótulo "Informe o nome *" -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        style="@style/TextStyle.FieldLabel"
+                        android:text="@string/informe_nome" />
+
+                    <TextView
+                        style="@style/TextStyle.Required"
+                        android:text=" *" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_nome"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_hint"
+                    android:backgroundTint="@color/red_primary" />
+
+                <!-- Card: produto + preço -->
+                <LinearLayout
+                    style="@style/CardStyle.Default"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/TextStyle.SectionTitle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/hamburguer" />
+
+                    <TextView
+                        style="@style/TextStyle.Price"
+                        android:text="@string/preco_hamburguer" />
+
+                </LinearLayout>
+
+                <!-- Card: adicionais -->
+                <LinearLayout
+                    style="@style/CardStyle.Default"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextStyle.SectionTitle"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/adicionais" />
+
+                    <CheckBox
+                        android:id="@+id/checkBacon"
+                        style="@style/CheckBoxStyle.Adicional"
+                        android:text="@string/bacon" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <CheckBox
+                        android:id="@+id/checkQueijo"
+                        style="@style/CheckBoxStyle.Adicional"
+                        android:text="@string/queijo" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <CheckBox
+                        android:id="@+id/checkOnionRings"
+                        style="@style/CheckBoxStyle.Adicional"
+                        android:text="@string/onion_rings" />
+
+                </LinearLayout>
+
+                <!-- Card: quantidade -->
+                <LinearLayout
+                    style="@style/CardStyle.Default"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/EstiloTexto"
+                        android:layout_marginBottom="12dp"
+                        android:text="@string/quantidade" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnSubtrair"
+                            style="@style/ButtonStyle.Counter"
+                            android:layout_marginEnd="8dp"
+                            android:text="−" />
+
+                        <TextView
+                            android:id="@+id/textQuantidade"
+                            style="@style/TextStyle.Counter"
+                            android:text="0" />
+
+                        <Button
+                            android:id="@+id/btnSomar"
+                            style="@style/ButtonStyle.Counter"
+                            android:layout_marginStart="8dp"
+                            android:text="+" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ── Footer ──────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@color/surface_card"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textResumoLabel"
+            style="@style/EstiloTexto"
+            android:layout_marginBottom="8dp"
+            android:text="@string/resumo_pedido" />
+
+        <TextView
+            android:id="@+id/textResumo"
+            style="@style/TextStyle.Body"
+            android:layout_marginBottom="12dp"
+            android:text="@string/nenhum_item" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                style="@style/TextStyle.SectionTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/total" />
+
+            <TextView
+                android:id="@+id/textTotal"
+                style="@style/EstiloTexto"
+                android:text="R$ 0,00" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEnviarPedido"
+            style="@style/ButtonStyle.Primary"
+            android:text="@string/fazer_pedido" />
+
+    </LinearLayout>
+
+</FrameLayout>

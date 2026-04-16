@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="red_primary">#B71C1C</color>
+    <color name="red_dark">#7F0000</color>
+    <color name="background_page">#F5F5F5</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="divider">#EEEEEE</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#424242</color>
+    <color name="text_hint">#9E9E9E</color>
+</resources>
