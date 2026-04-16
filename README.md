@@ -79,8 +79,3 @@ HamburgueriaZ/
 └── README.md
 ```
 
----
-
-## 👩‍💻 Autora
-
-Desenvolvido por **Camila Falaschi Ide** como parte do portfólio de Desenvolvimento Mobile.
